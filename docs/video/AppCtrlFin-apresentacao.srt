@@ -1,0 +1,135 @@
+1
+00:00:00,400 --> 00:00:08,022
+Olá! Este é o AppCtrlFin, um controle financeiro pessoal e gratuito.
+
+2
+00:00:08,372 --> 00:00:19,025
+Em poucos minutos, você vai ver como acompanhar a conta corrente, os cartões, os investimentos e o seu futuro financeiro.
+
+3
+00:00:19,375 --> 00:00:23,933
+Todos os valores mostrados aqui são fictícios.
+
+4
+00:00:25,583 --> 00:00:31,449
+Tudo começa pelo mês de referência, escolhido no topo da tela.
+
+5
+00:00:31,799 --> 00:00:40,214
+Os quadros mostram o saldo da conta hoje, o saldo no início do mês e a projeção para o fim do mês.
+
+6
+00:00:40,564 --> 00:00:50,525
+Na grade ficam os lançamentos do mês, agrupados por tipo, com o vencimento, o pagamento e o saldo acumulado.
+
+7
+00:00:50,875 --> 00:01:00,722
+Meses passados mostram o que aconteceu. Meses futuros são simulados a partir do último mês com dados.
+
+8
+00:01:02,372 --> 00:01:08,375
+Todo lançamento nasce previsto: tipo, vencimento e valor.
+
+9
+00:01:08,725 --> 00:01:17,712
+Quando o dinheiro sai ou entra de verdade, use Confirmar pagamento e informe a data e o valor efetivos.
+
+10
+00:01:18,062 --> 00:01:23,400
+Assim você compara o que planejou com o que realmente aconteceu.
+
+11
+00:01:25,050 --> 00:01:33,383
+Cartões de crédito são tipos compostos por eventos, com dia de corte e dia de vencimento.
+
+12
+00:01:35,033 --> 00:01:45,898
+Cada compra é um evento. Compras até o dia de corte entram na fatura do mês; depois dele, na fatura seguinte.
+
+13
+00:01:46,248 --> 00:01:54,754
+A fatura se monta sozinha com a soma das compras. Estornos entram com valor negativo.
+
+14
+00:01:55,104 --> 00:02:01,107
+Quando pagar, confirme o pagamento da fatura nesta mesma tela.
+
+15
+00:02:02,757 --> 00:02:11,390
+A conta corrente tem um extrato do primeiro ao último dia do mês, pela data em que o dinheiro entra ou sai.
+
+16
+00:02:11,740 --> 00:02:17,731
+O rodapé avisa se a conta vai ficar negativa em algum dia do mês.
+
+17
+00:02:18,081 --> 00:02:23,574
+Em Parâmetros da conta, você informa o saldo inicial.
+
+18
+00:02:25,224 --> 00:02:33,028
+Na área de investimentos, você cadastra cada aplicação com o rendimento estimado por mês.
+
+19
+00:02:33,378 --> 00:02:40,478
+Aplicar tira dinheiro da conta. Resgatar devolve dinheiro para a conta.
+
+20
+00:02:40,828 --> 00:02:48,683
+Para cada investimento, você vê a movimentação mês a mês, o realizado e a projeção.
+
+21
+00:02:50,333 --> 00:02:56,333
+Um dos investimentos pode ser marcado para socorrer a conta corrente.
+
+22
+00:02:56,683 --> 00:03:08,136
+Se a conta ficar negativa, o botão Socorrer conta propõe o resgate exato para cobrir o saldo. Você confere e confirma.
+
+23
+00:03:09,786 --> 00:03:17,783
+A visão global é a sua análise de longo prazo, mês a mês, até a idade que você escolher.
+
+24
+00:03:18,133 --> 00:03:27,834
+O mês atual vem dos dados reais. O futuro é estimado pelas premissas e pelo rendimento dos investimentos.
+
+25
+00:03:28,184 --> 00:03:35,521
+O resumo mostra quando os investimentos acabam e quanto faltaria por mês depois disso.
+
+26
+00:03:35,871 --> 00:03:42,473
+O mês marcador do ano, como o do seu aniversário, aparece destacado.
+
+27
+00:03:44,123 --> 00:03:54,396
+A aba Realizado mostra o que de fato aconteceu: receitas, gastos, investimentos e patrimônio, mês a mês.
+
+28
+00:03:56,046 --> 00:04:05,369
+As premissas são o que você estima para o futuro: salário, gastos do mês, aposentadoria, uma viagem.
+
+29
+00:04:05,719 --> 00:04:14,465
+Cada uma tem um período de início e de fim, e pode valer só em um mês do ano, como o décimo terceiro.
+
+30
+00:04:16,115 --> 00:04:25,869
+Você também pode definir metas a partir de hoje: ter um valor investido numa data, ou o dinheiro durar até uma data.
+
+31
+00:04:26,219 --> 00:04:35,297
+Para cada meta, o app diz se ela é atingida e, se não for, quanto a mais por mês seria preciso.
+
+32
+00:04:36,947 --> 00:04:46,474
+Seus dados ficam só no seu computador, num único arquivo. Para fazer backup, basta copiá-lo.
+
+33
+00:04:46,824 --> 00:04:52,291
+O manual completo está no botão Manual, na tela principal.
+
+34
+00:04:52,641 --> 00:04:56,253
+Obrigado por usar o AppCtrlFin!

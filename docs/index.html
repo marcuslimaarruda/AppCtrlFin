@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AppCtrlFin — controle financeiro pessoal</title>
+<meta name="description" content="Controle financeiro pessoal gratuito para Windows: conta corrente, cartões, investimentos e visão global de longo prazo.">
+<style>
+  :root { --azul: #0b3d6b; --destaque: #0b6bcb; --tinta: #1f2933; --suave: #52606d; --linha: #d9e2ec; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 17px/1.6 "Segoe UI", Arial, sans-serif; color: var(--tinta); background: #fff; }
+  .topo { background: linear-gradient(135deg, #0b3d6b, #0b6bcb); color: #fff; padding: 56px 16px 64px; text-align: center; }
+  .topo h1 { margin: 0; font-size: 46px; }
+  .topo p { margin: 10px auto 28px; max-width: 640px; opacity: .92; font-size: 20px; }
+  .botao { display: inline-block; background: #fff; color: var(--azul); font-weight: 600; padding: 14px 28px; border-radius: 8px; text-decoration: none; margin: 6px; }
+  .botao.sec { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.7); }
+  .pequeno { font-size: 14px; opacity: .85; margin-top: 14px; }
+  main { max-width: 1040px; margin: 0 auto; padding: 0 16px 64px; }
+  .video { margin: -36px auto 40px; max-width: 960px; }
+  video, .tela { width: 100%; border-radius: 10px; box-shadow: 0 8px 30px rgba(0,0,0,.18); border: 1px solid var(--linha); background: #000; }
+  .grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; margin: 32px 0; }
+  .grade h3 { margin: 12px 0 4px; }
+  .grade p { margin: 0; color: var(--suave); font-size: 16px; }
+  .tela { background: #fff; }
+  h2 { text-align: center; margin-top: 48px; }
+  footer { border-top: 1px solid var(--linha); color: var(--suave); text-align: center; padding: 24px 16px; font-size: 14px; }
+  footer a { color: var(--destaque); }
+</style>
+</head>
+<body>
+<section class="topo">
+  <h1>AppCtrlFin</h1>
+  <p>Controle financeiro pessoal gratuito: conta corrente, cartões, investimentos e a visão global do seu futuro, mês a mês.</p>
+  <a class="botao" href="https://github.com/marcuslimaarruda/AppCtrlFin/releases/latest/download/AppCtrlFinApp-win-Setup.exe">⬇ Baixar para Windows</a>
+  <a class="botao sec" href="manual/">Manual</a>
+  <div class="pequeno">Windows 10/11 · gratuito · seus dados ficam só no seu computador</div>
+</section>
+
+<main>
+  <div class="video">
+    <video controls preload="metadata" poster="manual/img/01-principal.png">
+      <source src="video/AppCtrlFin-apresentacao.mp4" type="video/mp4">
+      <track kind="captions" srclang="pt-BR" label="Português" src="video/AppCtrlFin-apresentacao.vtt" default>
+    </video>
+  </div>
+
+  <h2>O que ele faz</h2>
+  <div class="grade">
+    <div><img class="tela" src="manual/img/01-principal.png" alt="Tela principal"><h3>Mês a mês</h3><p>Previsto e realizado, saldo de hoje e projeção do fim do mês.</p></div>
+    <div><img class="tela" src="manual/img/03-eventos-cartao.png" alt="Cartões"><h3>Cartões de crédito</h3><p>Compras pelo dia de corte; a fatura se monta sozinha.</p></div>
+    <div><img class="tela" src="manual/img/05-conta-corrente.png" alt="Conta corrente"><h3>Conta corrente</h3><p>Extrato do mês e aviso quando a conta vai ficar negativa.</p></div>
+    <div><img class="tela" src="manual/img/07-investimentos.png" alt="Investimentos"><h3>Investimentos</h3><p>Aplicações, resgates, rendimentos, projeção e socorro da conta.</p></div>
+    <div><img class="tela" src="manual/img/08-visao-estimado.png" alt="Visão global"><h3>Visão global</h3><p>Planejamento de longo prazo até a idade que você escolher.</p></div>
+    <div><img class="tela" src="manual/img/10-visao-metas.png" alt="Metas"><h3>Metas</h3><p>O app diz se a meta é atingida e quanto a mais por mês seria preciso.</p></div>
+  </div>
+  <p style="text-align:center;color:var(--suave)">Todas as telas usam dados fictícios.</p>
+</main>
+
+<footer>
+  AppCtrlFin · uso gratuito (<a href="https://github.com/marcuslimaarruda/AppCtrlFin/blob/main/TERMOS.md">termos</a>) ·
+  desenvolvido por <a href="https://github.com/marcuslimaarruda">Marcus Lima Arruda</a> — ACI Arruda Consultoria em Informática
+</footer>
+</body>
+</html>

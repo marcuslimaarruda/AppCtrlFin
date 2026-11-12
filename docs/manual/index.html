@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual do AppCtrlFin</title>
+<style>
+  :root { --tinta: #1f2933; --suave: #52606d; --linha: #d9e2ec; --fundo: #ffffff; --destaque: #0b6bcb; --nota: #fff8e1; --dica: #e8f4fd; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.6 "Segoe UI", Arial, sans-serif; color: var(--tinta); background: var(--fundo); }
+  header { background: #0b3d6b; color: #fff; padding: 28px 16px; }
+  header div, main, nav { max-width: 980px; margin: 0 auto; }
+  header h1 { margin: 0 0 4px; font-size: 30px; }
+  header p { margin: 0; opacity: .85; }
+  nav { padding: 16px; border-bottom: 1px solid var(--linha); }
+  nav ol { columns: 2; margin: 0; padding-left: 20px; }
+  nav a { color: var(--destaque); text-decoration: none; }
+  main { padding: 8px 16px 64px; }
+  h2 { margin-top: 48px; padding-top: 8px; border-top: 2px solid var(--linha); font-size: 24px; }
+  h3 { margin-top: 28px; font-size: 19px; }
+  img { max-width: 100%; border: 1px solid var(--linha); border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,.08); margin: 8px 0 4px; }
+  figure { margin: 16px 0; }
+  figcaption { color: var(--suave); font-size: 14px; }
+  .nota, .dica { padding: 12px 16px; border-radius: 6px; margin: 16px 0; }
+  .nota { background: var(--nota); border-left: 4px solid #f0b429; }
+  .dica { background: var(--dica); border-left: 4px solid var(--destaque); }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 15px; }
+  th, td { border: 1px solid var(--linha); padding: 6px 10px; text-align: left; vertical-align: top; }
+  th { background: #f0f4f8; }
+  kbd { background: #f0f4f8; border: 1px solid var(--linha); border-radius: 4px; padding: 0 6px; font-family: inherit; font-size: 14px; }
+  @media (max-width: 700px) { nav ol { columns: 1; } }
+</style>
+</head>
+<body>
+<header><div>
+  <h1>Manual do AppCtrlFin</h1>
+  <p>Controle financeiro pessoal: conta corrente, cartões, investimentos e visão global de longo prazo.</p>
+</div></header>
+
+<nav>
+  <ol>
+    <li><a href="#comecar">Primeiros passos</a></li>
+    <li><a href="#principal">Tela principal</a></li>
+    <li><a href="#lancamentos">Lançamentos: previsto e realizado</a></li>
+    <li><a href="#tipos">Tipos de transação</a></li>
+    <li><a href="#cartoes">Cartões de crédito (eventos)</a></li>
+    <li><a href="#conta">Conta corrente e extrato</a></li>
+    <li><a href="#investimentos">Investimentos</a></li>
+    <li><a href="#socorro">Socorro da conta</a></li>
+    <li><a href="#visao">Visão global</a></li>
+    <li><a href="#metas">Metas</a></li>
+    <li><a href="#dados">Seus dados, backup e problemas</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<h2 id="comecar">1. Primeiros passos</h2>
+<p>O AppCtrlFin guarda tudo no seu computador, num único arquivo. Não precisa de internet, de conta ou de servidor.</p>
+<p>Na primeira vez que abre, o app cria o banco de dados <strong>zerado</strong>, já com uma lista de <strong>tipos de transação</strong> genéricos (salário, rendimentos, fatura de cartão de crédito, Pix...) que você pode editar e completar à vontade.</p>
+<h3>Em 4 passos</h3>
+<ol>
+  <li><strong>Informe o saldo da conta:</strong> <em>Conta corrente... → Parâmetros da conta...</em> — o saldo no início de um dia (por exemplo, o dia 1º do mês atual).</li>
+  <li><strong>Ajuste os tipos de transação:</strong> <em>Tipos de transação...</em> — renomeie, crie os seus e desative os que não usa.</li>
+  <li><strong>Cadastre o mês:</strong> <em>Novo lançamento</em> para cada conta a pagar e cada recebimento previsto.</li>
+  <li><strong>Confirme o que aconteceu:</strong> quando pagar ou receber, use <em>Confirmar pagamento</em>.</li>
+</ol>
+<div class="dica">Depois disso, cadastre seus <a href="#investimentos">investimentos</a> e as <a href="#visao">premissas</a> para ver a visão de longo prazo.</div>
+
+<h2 id="principal">2. Tela principal</h2>
+<figure><img src="img/01-principal.png" alt="Tela principal"><figcaption>Tela principal: o mês de referência, os saldos e os lançamentos do mês.</figcaption></figure>
+<p>Tudo gira em torno do <strong>mês de referência</strong>, escolhido no topo (<kbd>&lt;</kbd> <kbd>&gt;</kbd> ou <em>Mês atual</em>).</p>
+<table>
+  <tr><th>Mês</th><th>O que aparece</th></tr>
+  <tr><td>Passado</td><td>O que está no banco.</td></tr>
+  <tr><td>Atual</td><td>O que já foi pago e o que ainda está previsto.</td></tr>
+  <tr><td>Futuro</td><td>Os previstos já cadastrados e uma <strong>simulação</strong> dos demais, copiando o último mês com dados (em cinza, itálico).</td></tr>
+</table>
+<h3>Os quatro quadros de saldo</h3>
+<ul>
+  <li><strong>Saldo da conta hoje:</strong> o dinheiro real, contando só o que já foi pago ou recebido.</li>
+  <li><strong>Saldo no início do mês</strong> e <strong>projeção para o fim do mês:</strong> encadeados mês a mês, como numa planilha.</li>
+  <li><strong>Resultado do mês:</strong> créditos menos débitos.</li>
+</ul>
+<h3>A grade</h3>
+<table>
+  <tr><th>Coluna</th><th>Significado</th></tr>
+  <tr><td>Vencimento / Pagamento</td><td>Quando vence e quando foi pago.</td></tr>
+  <tr><td>Débito / Crédito</td><td>Valor considerado: o pago, se já foi pago; senão, o previsto.</td></tr>
+  <tr><td>Previsão</td><td>Saldo acumulado contando tudo.</td></tr>
+  <tr><td>Resultado</td><td>Saldo acumulado contando só o que já foi pago.</td></tr>
+  <tr><td>Situação</td><td>Pago, Previsto, Atrasado, Parcial ou Simulado.</td></tr>
+</table>
+<ul>
+  <li>A primeira linha é a <strong>conta corrente</strong>: dois cliques abrem o extrato.</li>
+  <li>Lançamentos do mesmo tipo ficam <strong>agrupados</strong> (▸). Dois cliques abrem ou fecham o grupo.</li>
+  <li>Créditos aparecem em verde; aplicações e resgates de investimento, em azul.</li>
+</ul>
+
+<h2 id="lancamentos">3. Lançamentos: previsto e realizado</h2>
+<figure><img src="img/02-novo-lancamento.png" alt="Novo lançamento"><figcaption>Cadastro de um lançamento.</figcaption></figure>
+<p>Todo lançamento nasce <strong>previsto</strong>: tipo, data de vencimento e valor previsto. Quando o dinheiro de fato sai ou entra, ele é <strong>confirmado</strong> com a data e o valor efetivos.</p>
+<ul>
+  <li><strong>Novo lançamento</strong>: cadastra. O botão <kbd>+</kbd> ao lado do tipo cria um tipo novo na hora.</li>
+  <li><strong>Editar</strong>: altera. Em mês futuro, numa linha simulada, vira <em>Lançar previsto</em> e transforma a simulação num lançamento de verdade.</li>
+  <li><strong>Confirmar pagamento</strong>: marca como pago. A data sugerida é hoje, se o vencimento é deste mês, ou o próprio vencimento.</li>
+  <li><strong>Excluir</strong>: apaga o lançamento.</li>
+</ul>
+<div class="nota">O pagamento é sempre do mês do vencimento. Se você digitar uma data de pagamento em outro mês, o app pergunta antes de salvar.</div>
+
+<h2 id="tipos">4. Tipos de transação</h2>
+<p>Cada lançamento tem um tipo, que diz se é <strong>crédito</strong> (entra dinheiro) ou <strong>débito</strong> (sai dinheiro). Use <em>Tipos de transação...</em> para ver a lista e <em>Novo tipo...</em> para criar.</p>
+<p>Um tipo pode ser <strong>composto por eventos</strong>: o valor do mês é a soma de pequenas compras. É o caso dos cartões de crédito.</p>
+<figure><img src="img/04-tipo-cartao.png" alt="Tipo de cartão"><figcaption>Tipo composto: dia de corte e dia de vencimento do cartão.</figcaption></figure>
+
+<h2 id="cartoes">5. Cartões de crédito (eventos)</h2>
+<figure><img src="img/03-eventos-cartao.png" alt="Compras do cartão"><figcaption>Compras da fatura do mês.</figcaption></figure>
+<p>Dois cliques na linha do cartão (ou o botão <em>Eventos...</em>) abrem as compras daquela fatura.</p>
+<ul>
+  <li><strong>Dia de corte:</strong> compras até o dia de corte entram na fatura do mês; depois dele, na fatura seguinte.</li>
+  <li><strong>A fatura se monta sozinha:</strong> o lançamento do cartão no mês é sempre a soma das compras. Se ainda não existe, é criado com vencimento no dia configurado.</li>
+  <li><strong>Estorno:</strong> informe o valor negativo.</li>
+  <li><strong>Parcelas:</strong> marque <em>Lançar em outra fatura</em> e escolha o mês de cada parcela.</li>
+  <li><strong>Pagar a fatura:</strong> <em>Confirmar pagamento da fatura</em>, nesta mesma tela.</li>
+</ul>
+
+<h2 id="conta">6. Conta corrente e extrato</h2>
+<figure><img src="img/05-conta-corrente.png" alt="Extrato da conta corrente"><figcaption>Extrato do mês, do dia 1º ao último dia.</figcaption></figure>
+<p>Abra pelo botão <em>Conta corrente...</em> ou com dois cliques na primeira linha da tela principal. O extrato mostra o dinheiro pela <strong>data em que entra ou sai</strong>:</p>
+<ul>
+  <li>pagamentos confirmados, pela data de pagamento;</li>
+  <li>aplicações (saem da conta) e resgates (entram na conta);</li>
+  <li>no mês atual, também o que está previsto. O que está atrasado aparece na data de hoje.</li>
+</ul>
+<p>O rodapé avisa se a conta fica <strong>negativa</strong> em algum dia do mês. Em <em>Parâmetros da conta...</em> ficam o nome da conta e o saldo inicial.</p>
+
+<h2 id="investimentos">7. Investimentos</h2>
+<figure><img src="img/07-investimentos.png" alt="Investimentos"><figcaption>Investimentos, com a movimentação mensal do investimento selecionado.</figcaption></figure>
+<p>Abra por <em>Investimentos...</em>, na tela principal ou no extrato.</p>
+<ul>
+  <li><strong>Novo investimento:</strong> nome, instituição, rendimento estimado (% ao mês), saldo inicial e data.</li>
+  <li><strong>Socorre a conta corrente:</strong> marque em um investimento (só um pode ter essa marca). Ele é usado no <a href="#socorro">socorro</a>.</li>
+  <li><strong>Aplicar:</strong> o dinheiro sai da conta corrente e entra no investimento.</li>
+  <li><strong>Resgatar:</strong> o dinheiro sai do investimento e entra na conta.</li>
+  <li><strong>Atualizar saldo / rendimento:</strong> digite o saldo que o banco mostra, e o app calcula o rendimento.</li>
+</ul>
+<p>Na parte de baixo ficam três abas:</p>
+<ul>
+  <li><strong>Movimentação mensal:</strong> mês a mês do investimento selecionado. Mostra o realizado e, se estiver ativo, os próximos 12 meses estimados.</li>
+  <li><strong>Movimentos do investimento:</strong> o histórico, onde você pode editar e excluir.</li>
+  <li><strong>Projeção de todos os ativos:</strong> o saldo de cada investimento nos próximos 12 meses.</li>
+</ul>
+<p>Investimentos encerrados ficam escondidos. Marque <em>Mostrar encerrados</em> para vê-los.</p>
+
+<h2 id="socorro">8. Socorro da conta</h2>
+<figure><img src="img/06-socorro.png" alt="Socorro da conta"><figcaption>O socorro é um resgate já preenchido, que você confere antes de salvar.</figcaption></figure>
+<p>Quando a conta corrente fica negativa no mês, o botão <strong>Socorrer conta</strong> do extrato fica disponível. Ele propõe um <strong>resgate</strong> do investimento marcado, a partir de hoje, no valor exato para a conta não ficar negativa até o fim do mês.</p>
+<p>Nada acontece sozinho: você confere a data e o valor e salva.</p>
+
+<h2 id="visao">9. Visão global</h2>
+<figure><img src="img/08-visao-estimado.png" alt="Visão global"><figcaption>Visão global: análise e planejamento de longo prazo.</figcaption></figure>
+<p>É a saída para <strong>análise e planejamento de longo prazo</strong>: mês a mês, até a idade que você escolher.</p>
+<ul>
+  <li><strong>O mês atual</strong> vem dos dados reais do app.</li>
+  <li><strong>O futuro é estimado</strong> pelas <a href="#premissas">premissas</a>, pelo rendimento estimado dos investimentos e pelas aplicações ou resgates já agendados.</li>
+  <li><strong>Mês sem dinheiro na conta:</strong> se a conta fecha um mês negativa, os investimentos a socorrem. Primeiro o marcado, depois os outros.</li>
+  <li><strong>Quando os investimentos acabam:</strong> o que falta aparece como <strong>déficit</strong>, em vermelho.</li>
+</ul>
+<h3>Parâmetros</h3>
+<ul>
+  <li><strong>Data de nascimento:</strong> para mostrar a idade.</li>
+  <li><strong>Projetar até a idade:</strong> até quando vai a projeção.</li>
+  <li><strong>Mês marcador do ano:</strong> o mês que marca o seu ano, por exemplo o do aniversário. Ele aparece destacado, é o único que mostra a idade e é o mês usado no <em>Resumo anual</em>.</li>
+</ul>
+<h3>O resumo no topo</h3>
+<p>Mostra quando os investimentos acabam, quanto falta por mês depois disso, o saldo aos 60, 65, 70, 75 e 80 anos e a situação no fim da projeção.</p>
+<h3>Aba Realizado</h3>
+<figure><img src="img/09-visao-realizado.png" alt="Realizado"><figcaption>O que de fato aconteceu, mês a mês.</figcaption></figure>
+<p>Mostra, desde o início da conta, as receitas e gastos pagos, as aplicações e resgates, o saldo da conta e dos investimentos e o <strong>patrimônio</strong> no fim de cada mês.</p>
+<h3 id="premissas">Aba Premissas</h3>
+<figure><img src="img/11-visao-premissas.png" alt="Premissas"><figcaption>O que se estima para o futuro.</figcaption></figure>
+<p>Cada premissa é uma receita ou um gasto por mês, com <strong>período</strong> (de / até), por exemplo:</p>
+<ul>
+  <li>"Gastos do mês: R$ 6.800 a partir de dezembro";</li>
+  <li>"Salário até dezembro de 2029";</li>
+  <li>"Aposentadoria a partir de janeiro de 2030".</li>
+</ul>
+<p>Uma premissa pode valer só em <strong>um mês do ano</strong> (13º salário, IPVA). Uma entrada ou saída pontual tem início e fim no mesmo mês. Para mudar um valor a partir de um mês, encerre a premissa atual e crie outra.</p>
+<figure><img src="img/13-premissa.png" alt="Nova premissa"><figcaption>Cadastro de uma premissa.</figcaption></figure>
+
+<h2 id="metas">10. Metas</h2>
+<figure><img src="img/10-visao-metas.png" alt="Metas"><figcaption>As metas e o que a projeção diz sobre cada uma.</figcaption></figure>
+<p>Há dois tipos de meta, sempre contadas a partir de hoje:</p>
+<ul>
+  <li><strong>Ter investido</strong> pelo menos um valor numa data, por exemplo R$ 120.000 em dez/2028.</li>
+  <li><strong>O dinheiro durar</strong> até uma data, sem faltar.</li>
+</ul>
+<p>Para cada meta a tela mostra se ela é <strong>atingida</strong>. Se não for, mostra <strong>quanto a mais por mês</strong> (economia ou receita), daqui até a data alvo, faria a meta ser atingida. O mês alvo também aparece marcado (🎯) na aba <em>Estimado mês a mês</em>.</p>
+<figure><img src="img/12-meta.png" alt="Nova meta"><figcaption>Cadastro de uma meta.</figcaption></figure>
+
+<h2 id="dados">11. Seus dados, backup e problemas</h2>
+<ul>
+  <li><strong>Onde ficam os dados:</strong> <code>%LOCALAPPDATA%\AppCtrlFin\appctrlfin.db</code>. Cole esse caminho na barra de endereço do Explorador de Arquivos.</li>
+  <li><strong>Backup:</strong> feche o app e copie o arquivo <code>appctrlfin.db</code> para outro lugar (pen drive, nuvem). Para restaurar, copie de volta.</li>
+  <li><strong>Auditoria:</strong> todo registro guarda quem incluiu e quem alterou, e quando. Aparece no rodapé das telas de cadastro.</li>
+  <li><strong>Desinstalar</strong> o app não apaga os seus dados.</li>
+  <li><strong>Se aparecer um erro inesperado:</strong> os detalhes ficam em <code>%LOCALAPPDATA%\AppCtrlFin\erros.log</code>. Envie esse arquivo junto com a descrição do que estava fazendo.</li>
+</ul>
+<div class="dica">O AppCtrlFin é gratuito. As projeções são <strong>estimativas</strong> a partir do que você informa; não são recomendação financeira.</div>
+
+</main>
+</body>
+</html>

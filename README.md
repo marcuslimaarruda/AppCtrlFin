@@ -1,6 +1,8 @@
-<h1 align="center">AppCtrlFin</h1>
-<p align="center"><strong>Controle financeiro pessoal gratuito para Windows</strong><br>
-Conta corrente · cartões de crédito · investimentos · visão global de longo prazo</p>
+<p align="center"><img src="docs/time2fin-icone.svg" width="120" alt="Time2Fin"></p>
+<h1 align="center">Time2Fin</h1>
+<p align="center"><strong>Chegou a hora de planejar sua vida financeira, sem complicação.</strong><br>
+Controle financeiro pessoal gratuito · conta corrente · cartões · investimentos · metas · visão de longo prazo<br>
+<sub>Antes chamado AppCtrlFin.</sub></p>
 
 <p align="center">
   <a href="https://github.com/marcuslimaarruda/AppCtrlFin/releases/latest"><img alt="Baixar" src="https://img.shields.io/github/v/release/marcuslimaarruda/AppCtrlFin?label=baixar&style=for-the-badge"></a>
@@ -16,8 +18,10 @@ Conta corrente · cartões de crédito · investimentos · visão global de long
 - **Conta corrente:** extrato do dia 1º ao último dia do mês, com aviso de quando a conta vai ficar negativa.
 - **Investimentos:** aplicações, resgates, rendimentos e projeção. Um investimento pode **socorrer** a conta negativa.
 - **Visão global:** sua análise de longo prazo até a idade que escolher, com o realizado, o estimado pelas premissas e as **metas**. Quando uma meta não é atingida, mostra quanto a mais por mês resolveria.
+- **Metas mês a mês:** "guardar R$ 1.000 por mês para a entrada do carro" vira uma parcela na tela principal; o app diz se cabe no orçamento e recalcula quando um mês sai diferente.
+- **Celular:** app para Android (e Windows) com as mesmas funções, sincronizado pelo Wi-Fi de casa, sem internet e sem conta.
 
-Seus dados ficam **só no seu computador**, num único arquivo, sem conta, sem internet e sem servidor.
+Seus dados ficam **só no seu computador**, num único arquivo, sem conta, sem internet e sem servidor. Veja a [política de privacidade](https://marcuslimaarruda.github.io/AppCtrlFin/privacidade.html).
 
 ## Veja funcionando
 
@@ -40,9 +44,11 @@ Seus dados ficam **só no seu computador**, num único arquivo, sem conta, sem i
 
 O app avisa quando houver versão nova e se atualiza sozinho, sem mexer nos seus dados.
 
+**Versão de teste:** a [0.2.0-teste.2](https://github.com/marcuslimaarruda/AppCtrlFin/releases/tag/v0.2.0-teste.2) já traz o nome Time2Fin, as metas mês a mês e o app de celular para Windows. Ela pode ser instalada por cima da versão atual: os dados continuam os mesmos.
+
 ## Requisitos
 
-Windows 10 ou 11 (64 bits). Versões para Android e iOS estão nos planos.
+Windows 10 ou 11 (64 bits). Android em testes; iPhone nos planos.
 
 ---
 Uso gratuito, veja os [termos](TERMOS.md). Desenvolvido por **[Marcus Lima Arruda](https://github.com/marcuslimaarruda)**, ACI – Arruda Consultoria em Informática.

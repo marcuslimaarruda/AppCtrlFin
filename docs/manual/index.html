@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Manual do AppCtrlFin</title>
+<title>Manual do Time2Fin</title>
 <style>
   :root { --tinta: #1f2933; --suave: #52606d; --linha: #d9e2ec; --fundo: #ffffff; --destaque: #0b6bcb; --nota: #fff8e1; --dica: #e8f4fd; }
   * { box-sizing: border-box; }
@@ -33,7 +33,7 @@
 </head>
 <body>
 <header><div>
-  <h1>Manual do AppCtrlFin</h1>
+  <h1>Manual do Time2Fin</h1>
   <p>Controle financeiro pessoal: conta corrente, cartões, investimentos e visão global de longo prazo.</p>
 </div></header>
 
@@ -49,6 +49,7 @@
     <li><a href="#socorro">Socorro da conta</a></li>
     <li><a href="#visao">Visão global</a></li>
     <li><a href="#metas">Metas</a></li>
+    <li><a href="#celular">Sincronizar com o celular</a></li>
     <li><a href="#dados">Seus dados, backup e problemas</a></li>
   </ol>
 </nav>
@@ -56,7 +57,7 @@
 <main>
 
 <h2 id="comecar">1. Primeiros passos</h2>
-<p>O AppCtrlFin guarda tudo no seu computador, num único arquivo. Não precisa de internet, de conta ou de servidor.</p>
+<p>O Time2Fin (antes chamado AppCtrlFin) guarda tudo no seu computador, num único arquivo. Não precisa de internet, de conta ou de servidor.</p>
 <p>Na primeira vez que abre, o app cria o banco de dados <strong>zerado</strong>, já com uma lista de <strong>tipos de transação</strong> genéricos (salário, rendimentos, fatura de cartão de crédito, Pix...) que você pode editar e completar à vontade.</p>
 <h3>Em 4 passos</h3>
 <ol>
@@ -93,29 +94,55 @@
 </table>
 <ul>
   <li>A primeira linha é a <strong>conta corrente</strong>: dois cliques abrem o extrato.</li>
-  <li>Lançamentos do mesmo tipo ficam <strong>agrupados</strong> (▸). Dois cliques abrem ou fecham o grupo.</li>
+  <li>Lançamentos do mesmo tipo ficam <strong>agrupados</strong> (▸). Dois cliques abrem ou fecham o grupo. O grupo mostra o nome do tipo; cada item mostra a <strong>descrição</strong> do lançamento (ou o tipo, se não tiver descrição). Um tipo com um lançamento só aparece numa linha: <em>Tipo — descrição</em>.</li>
   <li>Créditos aparecem em verde; aplicações e resgates de investimento, em azul.</li>
 </ul>
 
 <h2 id="lancamentos">3. Lançamentos: previsto e realizado</h2>
 <figure><img src="img/02-novo-lancamento.png" alt="Novo lançamento"><figcaption>Cadastro de um lançamento.</figcaption></figure>
-<p>Todo lançamento nasce <strong>previsto</strong>: tipo, data de vencimento e valor previsto. Quando o dinheiro de fato sai ou entra, ele é <strong>confirmado</strong> com a data e o valor efetivos.</p>
+<p>Todo lançamento nasce <strong>previsto</strong>: tipo, data de vencimento e valor previsto. A <strong>descrição</strong> (opcional) diz o que é aquele lançamento, por exemplo "Feira" ou "Presente da Ana", e é o que aparece na tela principal. A <strong>observação</strong> fica para anotações. Quando o dinheiro de fato sai ou entra, ele é <strong>confirmado</strong> com a data e o valor efetivos.</p>
 <ul>
   <li><strong>Novo lançamento</strong>: cadastra. O botão <kbd>+</kbd> ao lado do tipo cria um tipo novo na hora.</li>
   <li><strong>Editar</strong>: altera. Em mês futuro, numa linha simulada, vira <em>Lançar previsto</em> e transforma a simulação num lançamento de verdade.</li>
   <li><strong>Confirmar pagamento</strong>: marca como pago. A data sugerida é hoje, se o vencimento é deste mês, ou o próprio vencimento.</li>
   <li><strong>Excluir</strong>: apaga o lançamento.</li>
+  <li><strong>Descartar</strong> (numa linha simulada de mês futuro): diz que aquilo <em>não vai ocorrer</em>. Escolha <em>só neste mês</em> ou <em>deste mês em diante</em> — por exemplo, o salário depois de sair do emprego. A linha sai do mês e da projeção do saldo; lançamentos que você cadastrar continuam valendo.</li>
 </ul>
+<div class="nota">Para desfazer um descarte, clique no aviso <em>simulações descartadas — restaurar…</em> no rodapé da tela (aparece nos meses futuros com algo descartado) e marque o que deve voltar a ser simulado.</div>
 <div class="nota">O pagamento é sempre do mês do vencimento. Se você digitar uma data de pagamento em outro mês, o app pergunta antes de salvar.</div>
 
 <h2 id="tipos">4. Tipos de transação</h2>
-<p>Cada lançamento tem um tipo, que diz se é <strong>crédito</strong> (entra dinheiro) ou <strong>débito</strong> (sai dinheiro). Use <em>Tipos de transação...</em> para ver a lista e <em>Novo tipo...</em> para criar.</p>
+<p>Cada lançamento tem um tipo, que diz se é <strong>crédito</strong> (entra dinheiro) ou <strong>débito</strong> (sai dinheiro). Use <em>Tipos de transação...</em> para ver a lista e <em>Novo tipo...</em> para criar. Basta informar o nome.</p>
+<p>Na lista de tipos, a coluna <strong>Ativo</strong> pode ser marcada ou desmarcada direto na grade (clique ou barra de espaço); a mudança é gravada na hora. Tipos inativos não aparecem para novos lançamentos.</p>
+<p><strong>Cor:</strong> no cadastro do tipo, o botão <em>Cor</em> oferece uma paleta de tons claros, <em>Outra cor...</em> (qualquer cor) e <em>Sem cor</em>. Na tela principal, a linha do tipo fica com o fundo nessa cor e os itens abertos abaixo dela num tom mais claro. Com uma cor escura, o texto passa a branco. No celular, o tipo ganha uma faixa colorida ao lado do nome.</p>
 <p>Um tipo pode ser <strong>composto por eventos</strong>: o valor do mês é a soma de pequenas compras. É o caso dos cartões de crédito.</p>
 <figure><img src="img/04-tipo-cartao.png" alt="Tipo de cartão"><figcaption>Tipo composto: dia de corte e dia de vencimento do cartão.</figcaption></figure>
 
 <h2 id="cartoes">5. Cartões de crédito (eventos)</h2>
 <figure><img src="img/03-eventos-cartao.png" alt="Compras do cartão"><figcaption>Compras da fatura do mês.</figcaption></figure>
 <p>Dois cliques na linha do cartão (ou o botão <em>Eventos...</em>) abrem as compras daquela fatura.</p>
+<h3>Digitação rápida</h3>
+<p>Digite direto na grade, sem abrir janela. A tela já abre com o cursor na <strong>linha em branco</strong> do fim:</p>
+<ul>
+  <li><strong>Data → Enter → Descrição → Enter → Valor → Enter:</strong> a compra é gravada e o cursor vai para a próxima linha.</li>
+  <li><strong>Data:</strong> basta o dia (<code>8</code>), dia/mês (<code>08/07</code>) ou a data completa. A linha nova já vem com a data da última compra digitada.</li>
+  <li><strong>Descrição:</strong> o app sugere as descrições que você já usou neste cartão.</li>
+  <li><strong>Valor:</strong> <code>15</code>, <code>15,50</code> ou <code>-10</code> (estorno).</li>
+  <li><strong>Corrigir:</strong> clique na célula e digite. A alteração é gravada ao sair da linha. <strong>Delete</strong> exclui a compra (pede confirmação) e <strong>Esc</strong> cancela a linha em digitação.</li>
+  <li>Compras digitadas aqui entram na fatura que está aberta. Para lançar uma parcela em outra fatura, use <em>Detalhes...</em>.</li>
+</ul>
+<h3>Importar o extrato do banco</h3>
+<p>O botão <em>Importar extrato...</em> lê o arquivo da fatura exportado pelo app ou site do banco, em <strong>OFX</strong> (o mais garantido) ou <strong>CSV</strong>:</p>
+<ul>
+  <li><strong>OFX</strong> é um formato padrão, e o app lê de qualquer banco.</li>
+  <li><strong>CSV:</strong> o app descobre sozinho quais colunas são data, descrição e valor. Se errar, corrija nas listas do alto da tela. As colunas ficam <strong>lembradas no cartão</strong> para as próximas vezes.</li>
+  <li>Antes de gravar, cada linha aparece como <strong>Nova</strong> (marcada), <strong>Já importada</strong>, <strong>Já digitada?</strong> (uma compra de mesmo valor e data próxima que você digitou à mão) ou <strong>Pagamento da fatura</strong>. As duas últimas vêm desmarcadas. A barra de espaço marca ou desmarca as linhas selecionadas.</li>
+  <li><strong>Pode importar o mesmo arquivo quantas vezes quiser:</strong> só entram compras novas. Duas compras iguais no mesmo dia continuam sendo duas.</li>
+  <li>As compras vão para a fatura aberta na tela ou, se preferir, para a fatura de cada uma pela data e o dia de corte.</li>
+  <li>O arquivo é lido só no seu computador. Nada é enviado para fora.</li>
+</ul>
+<p>No cadastro do cartão (tipo composto), informe também o <strong>banco emissor</strong>. É opcional e ajuda a identificar o cartão na importação.</p>
+<h3>Regras da fatura</h3>
 <ul>
   <li><strong>Dia de corte:</strong> compras até o dia de corte entram na fatura do mês; depois dele, na fatura seguinte.</li>
   <li><strong>A fatura se monta sozinha:</strong> o lançamento do cartão no mês é sempre a soma das compras. Se ainda não existe, é criado com vencimento no dia configurado.</li>
@@ -190,13 +217,82 @@
 
 <h2 id="metas">10. Metas</h2>
 <figure><img src="img/10-visao-metas.png" alt="Metas"><figcaption>As metas e o que a projeção diz sobre cada uma.</figcaption></figure>
-<p>Há dois tipos de meta, sempre contadas a partir de hoje:</p>
+<p>Há três tipos de meta, sempre contadas a partir de hoje:</p>
 <ul>
   <li><strong>Ter investido</strong> pelo menos um valor numa data, por exemplo R$ 120.000 em dez/2028.</li>
   <li><strong>O dinheiro durar</strong> até uma data, sem faltar.</li>
+  <li><strong>Guardar por mês</strong> um valor, do primeiro ao último mês, por exemplo R$ 1.000 por mês de jan a dez/2027 para juntar a entrada do carro.</li>
 </ul>
 <p>Para cada meta a tela mostra se ela é <strong>atingida</strong>. Se não for, mostra <strong>quanto a mais por mês</strong> (economia ou receita), daqui até a data alvo, faria a meta ser atingida. O mês alvo também aparece marcado (🎯) na aba <em>Estimado mês a mês</em>.</p>
 <figure><img src="img/12-meta.png" alt="Nova meta"><figcaption>Cadastro de uma meta.</figcaption></figure>
+<h3>Guardar por mês</h3>
+<p>Enquanto você preenche, a tela diz se a meta <strong>é viável</strong>: guardando o valor todo mês, a conta corrente precisa fechar todos os meses da meta sem resgatar investimentos (pela mesma projeção da visão global, feita com as premissas).</p>
+<p>Se não for viável, a tela mostra em que mês a conta aperta e sugere outros jeitos de chegar lá. Clique numa sugestão e em <em>Usar esta</em> (no celular, toque nela):</p>
+<ul>
+  <li><strong>Mais tempo, mesmo total</strong>: o menor prazo em que a parcela cabe;</li>
+  <li><strong>Mesmo prazo, valor menor</strong>: a maior parcela que cabe nos meses pedidos;</li>
+  <li><strong>Mesmo valor, começando depois</strong>: quando os primeiros meses estão apertados.</li>
+</ul>
+<p>Uma meta viável é um <strong>compromisso mensal</strong>. Ao salvar, ela entra na tela principal no tipo <strong>🎯 Metas</strong>, que reúne todas as metas: uma parcela prevista por mês, com vencimento no dia 5 e descrição como "Entrada do carro — 3/12". A ideia é ter no banco uma caixinha com o nome da meta e confirmar cada parcela quando transferir o dinheiro para ela. A meta mostra quanto já foi juntado. A projeção da visão global passa a contar as parcelas como saída da conta. Enquanto a meta não couber no orçamento, ela fica fora da tela principal.</p>
+<p>As metas se adaptam ao longo do tempo:</p>
+<ul>
+  <li><strong>Mudar o valor por mês ou os meses</strong>: ao salvar, as parcelas ainda não pagas são refeitas; as pagas ficam como estão.</li>
+  <li><strong>Guardar um valor diferente num mês</strong> (por exemplo, "nesse mês só consegui R$ 30"): ao confirmar a parcela com outro valor, o app pergunta como fica a meta e mostra se cada opção cabe no orçamento:
+    <ul>
+      <li><em>Diluir nas próximas parcelas</em>: a diferença é dividida entre os meses que faltam;</li>
+      <li><em>Estender o prazo</em>: a parcela continua a mesma e a meta ganha meses no fim (se guardou a mais, <em>Terminar antes</em>);</li>
+      <li><em>Deixar como está</em>: a meta junta um pouco menos (ou mais).</li>
+    </ul>
+  </li>
+  <li><strong>Inativar ou excluir</strong> a meta tira da tela principal as parcelas ainda não pagas; as pagas ficam.</li>
+</ul>
+<figure><img src="img/12b-meta-guardar.png" alt="Meta guardar por mês"><figcaption>Meta que não cabe no orçamento, com as sugestões.</figcaption></figure>
+
+<h2 id="app-celular">O app do celular</h2>
+<p>O app do celular usa as mesmas regras do computador.</p>
+<p><strong>Resumo do mês:</strong>
+o cartão da conta funciona como um extrato: saldo de hoje e, abaixo, início do mês + entradas − saídas = projeção do fim.
+Cada lançamento cabe numa linha ("Feira · Pago em 03/11"), com o fundo na cor do tipo de transação.
+Tocar no nome do tipo recolhe ou expande os lançamentos dele, e o tipo continua recolhido ao trocar de mês.</p>
+<p>Pelo menu ⋮ do resumo do mês:</p>
+<ul>
+  <li><strong>Conta corrente:</strong> extrato do mês, com saldo anterior, entradas, saídas e saldo no fim. Se a conta fica negativa, aparece o aviso com o botão <em>Socorrer com o investimento</em>. Tocar no cartão "Saldo da conta hoje" do resumo também abre o extrato.</li>
+  <li><strong>Investimentos:</strong> total investido, saldo de cada um, movimentação mês a mês (realizado e estimado) e os movimentos. Os botões <em>Aplicar</em>, <em>Resgatar</em> e <em>Atualizar saldo</em> fazem o mesmo que no computador; ao atualizar o saldo, informe o que o banco mostra e o app calcula o rendimento.</li>
+</ul>
+<ul>
+  <li><strong>Visão global:</strong> os mesmos cálculos do computador, em quatro seções:
+    <ul>
+      <li><em>Estimado</em>: abre em resumo anual, com até quando o dinheiro dura, os marcos por idade e o fim da projeção;</li>
+      <li><em>Realizado</em>;</li>
+      <li><em>Metas</em>: com a situação e o ajuste mensal necessário;</li>
+      <li><em>Premissas</em>.</li>
+    </ul>
+    Tocar numa meta ou premissa abre o cadastro. Em <em>Parâmetros</em>, informe a data de nascimento, a idade final e o mês que marca a virada do ano.</li>
+</ul>
+<ul>
+  <li><strong>Compras do cartão:</strong>
+    <ul>
+      <li>a barra no alto permite digitar o dia (<code>8</code>), a descrição e o valor e tocar em <strong>+</strong>. A compra entra na fatura aberta e o dia fica para a próxima;</li>
+      <li><em>Importar extrato</em> abre o arquivo OFX ou CSV no celular (Downloads, Arquivos, e-mail...) e mostra a mesma conferência do computador. Só as compras novas entram, e o mesmo arquivo pode ser importado de novo sem duplicar;</li>
+      <li>no cadastro do cartão (tipo de transação), dá para informar o <strong>banco emissor</strong>.</li>
+    </ul>
+  </li>
+</ul>
+<p>Com isso, o app do celular tem as mesmas funções do computador.</p>
+
+<h2 id="celular">Sincronizar com o celular</h2>
+<p>O app do celular e o do computador ficam com os mesmos dados pelo <strong>Wi-Fi de casa</strong>, sem internet, sem conta e sem servidor.</p>
+<ol>
+  <li>No computador, clique em <em>Celular...</em>. Aparecem um QR Code e um código de 16 letras e números. Se o Windows perguntar, permita o acesso do Time2Fin em redes privadas.</li>
+  <li>No celular, abra o menu e toque em <em>Sincronizar com o computador</em> → <em>Ler QR Code do computador</em>. Sem câmera, use <em>Digitar endereço e código</em> com o que aparece na tela do computador.</li>
+  <li><strong>Na primeira vez</strong>, o celular recebe <strong>todos</strong> os dados do computador. O que existia só no celular é substituído, mas fica uma cópia de segurança no celular.</li>
+  <li>Depois disso, basta abrir <em>Celular...</em> no computador e tocar em <strong>Sincronizar agora</strong> no celular. Só o que mudou vai e volta: lançamentos, compras do cartão, tipos, investimentos e exclusões.</li>
+</ol>
+<ul>
+  <li><strong>Mesmo lançamento alterado nos dois aparelhos:</strong> vale a alteração mais recente.</li>
+  <li><strong>Segurança:</strong> os dados vão cifrados e só com o código do computador. <em>Gerar novo código</em> desfaz o pareamento dos celulares antigos.</li>
+  <li>Os dois apps precisam estar na mesma versão. Se não estiverem, o app avisa qual atualizar.</li>
+</ul>
 
 <h2 id="dados">11. Seus dados, backup e problemas</h2>
 <ul>
@@ -204,9 +300,13 @@
   <li><strong>Backup:</strong> feche o app e copie o arquivo <code>appctrlfin.db</code> para outro lugar (pen drive, nuvem). Para restaurar, copie de volta.</li>
   <li><strong>Auditoria:</strong> todo registro guarda quem incluiu e quem alterou, e quando. Aparece no rodapé das telas de cadastro.</li>
   <li><strong>Desinstalar</strong> o app não apaga os seus dados.</li>
+  <li><strong>Cópias automáticas:</strong> o app mantém as 10 mais recentes e todas do último mês; as mais antigas são apagadas sozinhas. Cópias que você fizer com outro nome nunca são apagadas.</li>
+  <li><strong>Atualizar</strong> o app mantém os seus dados. Quando a versão nova precisa mudar a estrutura do banco, o app guarda antes uma cópia automática, <code>appctrlfin.db.AAAAMMDD-HHMMSS-antes-versaoN.bak</code>, na mesma pasta.</li>
+  <li><strong>Instalar de novo</strong> por cima de dados que já existem: na primeira abertura, o app pergunta se você quer <strong>manter seus dados</strong> (recomendado) ou <strong>começar do zero</strong>. Começar do zero não apaga nada: os dados vão para uma cópia <code>…-antes-recomecar.bak</code>.</li>
+  <li><strong>App abriu vazio?</strong> Se o banco estiver sem lançamentos e houver cópias com dados na pasta, o app mostra as mais recentes e oferece restaurar. Ao restaurar, o banco vazio também é guardado numa cópia. Se escolher continuar vazio, ele não pergunta de novo por essas cópias.</li>
   <li><strong>Se aparecer um erro inesperado:</strong> os detalhes ficam em <code>%LOCALAPPDATA%\AppCtrlFin\erros.log</code>. Envie esse arquivo junto com a descrição do que estava fazendo.</li>
 </ul>
-<div class="dica">O AppCtrlFin é gratuito. As projeções são <strong>estimativas</strong> a partir do que você informa; não são recomendação financeira.</div>
+<div class="dica">O Time2Fin é gratuito. As projeções são <strong>estimativas</strong> a partir do que você informa; não são recomendação financeira.</div>
 
 </main>
 </body>

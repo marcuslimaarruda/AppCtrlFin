@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>Time2Fin</title>
+  <defs>
+    <path id="corpo" d="M300 430 C250 400 170 360 140 400 C110 440 120 520 150 545 C185 570 260 535 300 500 C360 590 560 600 690 560 C730 575 790 575 815 550 C845 520 845 470 815 445 C790 420 760 415 740 420 C700 340 560 315 450 340 C380 355 330 395 300 430 Z"/>
+    <g id="rosto">
+      <circle cx="712" cy="455" r="14"/>
+      <circle cx="798" cy="478" r="8"/>
+      <circle cx="818" cy="500" r="8"/>
+      <circle cx="792" cy="508" r="8"/>
+    </g>
+  </defs>
+  <rect width="1024" height="1024" rx="230" fill="#0F766E"/>
+  <!-- mãe -->
+  <g transform="translate(30,-30)">
+    <use xlink:href="#corpo" fill="#FFFFFF"/>
+    <ellipse cx="640" cy="600" rx="62" ry="24" fill="#FFFFFF" transform="rotate(55 640 600)"/>
+    <use xlink:href="#rosto" fill="#0F766E"/>
+  </g>
+  <!-- filhote, junto da nadadeira da mãe -->
+  <g transform="translate(300,470) scale(0.5)">
+    <use xlink:href="#corpo" fill="#FBBF24"/>
+    <ellipse cx="640" cy="600" rx="62" ry="24" fill="#FBBF24" transform="rotate(55 640 600)"/>
+    <use xlink:href="#rosto" fill="#0F766E"/>
+  </g>
+  <!-- água -->
+  <path d="M182 872 q70 -34 132 0 t132 0 t132 0 t132 0 t132 0" fill="none" stroke="#5EEAD4" stroke-width="22" stroke-linecap="round"/>
+</svg>

@@ -296,7 +296,7 @@ Tocar no nome do tipo recolhe ou expande os lançamentos dele, e o tipo continua
 
 <h2 id="dados">11. Seus dados, backup e problemas</h2>
 <ul>
-  <li><strong>Onde ficam os dados:</strong> <code>%LOCALAPPDATA%\AppCtrlFin\appctrlfin.db</code>. Cole esse caminho na barra de endereço do Explorador de Arquivos.</li>
+  <li><strong>Onde ficam os dados:</strong> <code>%USERPROFILE%\Time2Fin\appctrlfin.db</code> (a pasta <em>Time2Fin</em> dentro da sua pasta de usuário). Cole esse caminho na barra de endereço do Explorador de Arquivos. Até a versão 0.2.0 eles ficavam em <code>%LOCALAPPDATA%\AppCtrlFin</code>: ao atualizar, o app copia tudo para a pasta nova e deixa a antiga intacta, como reserva.</li>
   <li><strong>Backup:</strong> feche o app e copie o arquivo <code>appctrlfin.db</code> para outro lugar (pen drive, nuvem). Para restaurar, copie de volta.</li>
   <li><strong>Auditoria:</strong> todo registro guarda quem incluiu e quem alterou, e quando. Aparece no rodapé das telas de cadastro.</li>
   <li><strong>Desinstalar</strong> o app não apaga os seus dados.</li>
@@ -304,7 +304,7 @@ Tocar no nome do tipo recolhe ou expande os lançamentos dele, e o tipo continua
   <li><strong>Atualizar</strong> o app mantém os seus dados. Quando a versão nova precisa mudar a estrutura do banco, o app guarda antes uma cópia automática, <code>appctrlfin.db.AAAAMMDD-HHMMSS-antes-versaoN.bak</code>, na mesma pasta.</li>
   <li><strong>Instalar de novo</strong> por cima de dados que já existem: na primeira abertura, o app pergunta se você quer <strong>manter seus dados</strong> (recomendado) ou <strong>começar do zero</strong>. Começar do zero não apaga nada: os dados vão para uma cópia <code>…-antes-recomecar.bak</code>.</li>
   <li><strong>App abriu vazio?</strong> Se o banco estiver sem lançamentos e houver cópias com dados na pasta, o app mostra as mais recentes e oferece restaurar. Ao restaurar, o banco vazio também é guardado numa cópia. Se escolher continuar vazio, ele não pergunta de novo por essas cópias.</li>
-  <li><strong>Se aparecer um erro inesperado:</strong> os detalhes ficam em <code>%LOCALAPPDATA%\AppCtrlFin\erros.log</code>. Envie esse arquivo junto com a descrição do que estava fazendo.</li>
+  <li><strong>Se aparecer um erro inesperado:</strong> os detalhes ficam em <code>%USERPROFILE%\Time2Fin\erros.log</code>. Envie esse arquivo junto com a descrição do que estava fazendo.</li>
 </ul>
 <div class="dica">O Time2Fin é gratuito. As projeções são <strong>estimativas</strong> a partir do que você informa; não são recomendação financeira.</div>
 

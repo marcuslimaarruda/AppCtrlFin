@@ -1,5 +1,10 @@
 # Histórico de versões
 
+## Próxima versão
+
+- **Dados numa pasta nova:** `%USERPROFILE%\Time2Fin` (a pasta *Time2Fin* dentro da sua pasta de usuário). Na primeira abertura o app copia seus dados e as cópias de segurança da pasta antiga (`%LOCALAPPDATA%\AppCtrlFin`), que fica intacta como reserva. É o que permite publicar o app na Microsoft Store sem risco de perder dados ao desinstalar.
+- **Simulador de cenários de investimento** (Investimentos → *Simular cenários*, no computador e no celular): divida o dinheiro entre opções (CDB, LCI/LCA, Tesouro IPCA+, prefixado, ações…), diga como cada uma rende e veja o resultado líquido de IR nos cenários pessimista, base e otimista, em dinheiro de hoje (sem a inflação) e comparado a deixar tudo num CDB de 100% do CDI. Começa com os seus investimentos de hoje; o botão *Exemplo* traz uma divisão para editar. É só cálculo com as suas premissas, não recomendação. A última simulação fica guardada e vai para o outro aparelho na sincronização.
+
 ## 0.2.0-teste.2 — versão de teste (18/11/2026)
 
 - **Novo nome: Time2Fin** (antes AppCtrlFin), com logo novo (peixe-boi e filhote). Seus dados continuam na mesma pasta e nada muda no uso; a sincronização com o celular continua funcionando com aparelhos já pareados.
